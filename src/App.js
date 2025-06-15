@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "./firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged } from "./firebase/auth";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
@@ -10,12 +10,12 @@ function App() {
   const [isRegistering, setIsRegistering] = useState(false); // Toggle form
 
   // Listen for login/logout status
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, []);
+  // App.js
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, setUser);
+  return () => unsubscribe(); // clean up
+}, []);
+
 
   // Not logged in: show login or register
   if (!user) {
