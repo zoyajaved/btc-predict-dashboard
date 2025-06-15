@@ -7,17 +7,15 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [isRegistering, setIsRegistering] = useState(false); // Toggle form
+  const [isRegistering, setIsRegistering] = useState(false);
 
-  // Listen for login/logout status
-  // App.js
-useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, setUser);
-  return () => unsubscribe(); // clean up
-}, []);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
 
-
-  // Not logged in: show login or register
   if (!user) {
     return (
       <div className="auth-container">
@@ -42,7 +40,6 @@ useEffect(() => {
     );
   }
 
-  // Logged in: show dashboard
   return <Dashboard />;
 }
 
