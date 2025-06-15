@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "./firebase";
-import { onAuthStateChanged } from "./firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
