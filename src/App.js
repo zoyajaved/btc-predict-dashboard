@@ -7,21 +7,42 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [isRegistering, setIsRegistering] = useState(false); // Toggle form
 
   // Listen for login/logout status
   useEffect(() => {
-    return onAuthStateChanged(auth, setUser);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
   }, []);
 
+  // Not logged in: show login or register
   if (!user) {
     return (
-      <>
-        <Login onLogin={() => {}} />
-        <Register />
-      </>
+      <div className="auth-container">
+        {isRegistering ? (
+          <>
+            <Register />
+            <p>
+              Already have an account?{" "}
+              <button onClick={() => setIsRegistering(false)}>Login</button>
+            </p>
+          </>
+        ) : (
+          <>
+            <Login />
+            <p>
+              Don’t have an account?{" "}
+              <button onClick={() => setIsRegistering(true)}>Register</button>
+            </p>
+          </>
+        )}
+      </div>
     );
   }
 
+  // Logged in: show dashboard
   return <Dashboard />;
 }
 
