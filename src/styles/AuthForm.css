@@ -1,52 +1,18 @@
-/* AuthForm.css - Stylish dark-themed login/register form */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(145deg, #111827, #1f2937);
+}
 
-.auth-container {
-  background: #1f2937; /* Dark slate background */
-  color: #e5e7eb; /* Light text */
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 30px rgba(0, 191, 166, 0.3);
+.input-group {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 }
 
-.auth-container h2 {
-  text-align: center;
-  font-size: 1.8rem;
-  color: #00bfa6;
-  margin-bottom: 1rem;
-}
-
-.auth-container input {
-  padding: 0.75rem;
-  border: 1px solid #374151;
-  border-radius: 0.5rem;
-  background: #111827;
-  color: #e5e7eb;
-  font-size: 1rem;
-  outline: none;
-  transition: border 0.3s;
-}
-
-.auth-container input:focus {
-  border-color: #00bfa6;
-}
-
-.auth-container button {
-  background: #00bfa6;
-  color: #fff;
-  border: none;
-  padding: 0.75rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.auth-container button:hover {
-  background: #019e8f;
+.input-group label {
+  color: #cbd5e1;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
 }
