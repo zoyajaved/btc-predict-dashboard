@@ -57,6 +57,7 @@ function Dashboard() {
 
   return (
     <div className="dashboard-container">
+      <h1 className="dashboard-header">Welcome to the Dashboard</h1>
       <h2 className="dashboard-title">📊 Live Bitcoin Dashboard</h2>
       <p className="current-price"><strong>Current Price:</strong> ${price}</p>
 
