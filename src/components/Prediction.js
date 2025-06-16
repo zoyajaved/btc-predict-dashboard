@@ -108,19 +108,22 @@ function Prediction() {
               <strong>Predicted Max:</strong> {prediction.max.toFixed(2)}
             </div>
           </div>
-          <Line
-            data={chartData}
-            options={{
-              responsive: true,
-              plugins: {
-                legend: { position: "bottom", labels: { color: "#e2e8f0" } },
-              },
-              scales: {
-                x: { ticks: { color: "#e2e8f0" } },
-                y: { ticks: { color: "#e2e8f0" } },
-              },
-            }}
-          />
+
+          <div className="chart-container">
+            <Line
+              data={chartData}
+              options={{
+                responsive: true,
+                plugins: {
+                  legend: { position: "bottom", labels: { color: "#e2e8f0" } },
+                },
+                scales: {
+                  x: { ticks: { color: "#e2e8f0" } },
+                  y: { ticks: { color: "#e2e8f0" } },
+                },
+              }}
+            />
+          </div>
         </>
       )}
     </div>
