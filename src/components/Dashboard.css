@@ -1,46 +1,37 @@
 .dashboard-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 30px;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background-color: #f1f5f9;
+  color: #1e293b;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.dashboard-title {
-  font-size: 26px;
+.dashboard-header {
+  font-size: 2rem;
   font-weight: bold;
-  color: #222;
-  text-align: center;
-  margin-bottom: 20px;
+  color: #2563eb;
+  margin-bottom: 1.5rem;
 }
 
-.current-price {
-  font-size: 18px;
-  color: #333;
-  text-align: center;
-  margin-bottom: 20px;
+.dashboard-content {
+  background-color: #e2e8f0;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(100, 116, 139, 0.15);
 }
 
-.chart-container {
-  margin-top: 30px;
-}
-
-.predict-btn {
-  display: block;
-  margin: 30px auto 0;
-  padding: 12px 30px;
-  font-size: 16px;
-  background-color: #007bff;
+.dashboard-button {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #3b82f6;
   color: white;
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.predict-btn:hover {
-  background-color: #0056b3;
+.dashboard-button:hover {
+  background-color: #2563eb;
 }
