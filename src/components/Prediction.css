@@ -23,7 +23,7 @@ h2 {
 }
 
 .info-box {
-  background: #e2e8f0;
+  background: lightskyblue;
   padding: 15px;
   border-radius: 8px;
   width: 45%;
@@ -42,7 +42,7 @@ h2 {
 
 .input-grid input {
   padding: 10px;
-  border: 1px solid #cbd5e1;
+  border: 1px solid aliceblue;
   border-radius: 6px;
   text-align: center;
   font-size: 14px;
