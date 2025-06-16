@@ -1,37 +1,49 @@
 .dashboard-container {
-  background-color: #f1f5f9;
-  color: #1e293b;
-  min-height: 100vh;
+  max-width: 1000px;
+  margin: 2rem auto;
   padding: 2rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 191, 166, 0.2);
+  text-align: center;
 }
 
 .dashboard-header {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2563eb;
-  margin-bottom: 1.5rem;
+  color: #00bfa6;
+  margin-bottom: 0.5rem;
 }
 
-.dashboard-content {
-  background-color: #e2e8f0;
-  padding: 2rem;
+.dashboard-title {
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+}
+
+.current-price {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.chart-container {
+  background-color: #1e1e1e;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(100, 116, 139, 0.15);
+  padding: 1rem;
+  margin-top: 1rem;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.dashboard-button {
+.predict-btn {
   margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #3b82f6;
-  color: white;
+  padding: 0.8rem 2rem;
+  background-color: #00bfa6;
+  color: #fff;
   border: none;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s;
 }
 
-.dashboard-button:hover {
-  background-color: #2563eb;
+.predict-btn:hover {
+  background-color: #00a88f;
 }
