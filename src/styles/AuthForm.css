@@ -1,4 +1,4 @@
-/* Full-page dark background and center content */
+/* 1. Page wrapper for dark background and centering */
 .auth-wrapper {
   min-height: 100vh;
   background-color: #121212;
@@ -7,20 +7,13 @@
   align-items: center;
 }
 
-/* Fallback dark background for Register.js (which uses <body>) */
-body {
-  background-color: #121212;
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Shared container for both login and register */
+/* 2. Form container */
 .auth-container {
   max-width: 420px;
   width: 90%;
   margin: 80px auto;
   padding: 2.5rem;
-  background-color: #f0f0f0; /* Light box */
+  background-color: #1e1e2f;
   border-radius: 15px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -28,47 +21,43 @@ body {
   align-items: center;
 }
 
-/* Headings like 'Sign Up' and 'Login' */
+/* 3. Header text */
 .auth-container h2 {
-  color: #1e1e2f;
+  color: #f0f0f0;
   margin-bottom: 1.5rem;
   font-size: 1.75rem;
 }
 
-/* Each label + input block */
+/* 4. Input group styling */
 .input-group {
   width: 100%;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
-/* Labels for input fields */
 .input-group label {
-  margin-bottom: 0.5rem;
-  color: #1e1e2f;
-  font-weight: 500;
+  color: #f0f0f0;
   font-size: 0.95rem;
+  margin-bottom: 0.25rem;
 }
 
-/* Text fields */
-.input-group input {
+.auth-container input {
   width: 100%;
   padding: 0.75rem;
   border: none;
   border-radius: 8px;
-  background-color: #ffffff;
-  color: #333;
+  background-color: #2d2d44;
+  color: #e0e0e0;
   font-size: 1rem;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Placeholder text color */
-.input-group input::placeholder {
-  color: #888;
+.auth-container input::placeholder {
+  color: #a0a0b0;
 }
 
-/* Submit button */
+/* 5. Button */
 .auth-container button {
   width: 100%;
   padding: 0.8rem;
@@ -77,12 +66,10 @@ body {
   border: none;
   border-radius: 8px;
   font-size: 1rem;
-  font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
 .auth-container button:hover {
-  background-color: #009e8d;
+  background-color: #00a894;
 }
