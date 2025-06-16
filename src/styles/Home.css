@@ -1,52 +1,101 @@
-/* src/styles/Home.css */
-.home-container {
-  padding: 40px;
+/* Home.css */
+
+body {
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f9ff;
+  background-color: #0f172a;
+  color: white;
+}
+
+.home-container {
   min-height: 100vh;
-  color: #1c1c1c;
-}
-
-.home-header h1 {
-  font-size: 2.5rem;
-  color: #005e99;
-  margin-bottom: 10px;
-}
-
-.home-header p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #333;
-}
-
-.home-nav {
-  margin-bottom: 40px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  flex-direction: column;
 }
 
-.nav-btn {
-  background-color: #0073e6;
-  color: #fff;
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
   text-decoration: none;
-  padding: 12px 24px;
+  color: #e2e8f0;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #38bdf8;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #0f172a;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #38bdf8;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  background-color: #38bdf8;
+  color: #0f172a;
+  padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
-.nav-btn:hover {
-  background-color: #005bb5;
+.btn:hover {
+  background-color: #0ea5e9;
+  color: white;
 }
 
-.home-about h2 {
-  font-size: 1.8rem;
-  color: #005e99;
-  margin-bottom: 15px;
+.btn.outline {
+  background-color: transparent;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
 }
 
-.home-about p {
-  font-size: 1rem;
-  margin-bottom: 10px;
-  color: #444;
+.btn.outline:hover {
+  background-color: #1e293b;
+  color: white;
 }
