@@ -1,102 +1,146 @@
-/* Home.css */
-
-body {
+/* === General Home Page Styling === */
+.home-body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Deep Blue Gradient */
+  color: white;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f1f5f9; /* Slightly light background */
-  color: #1e293b;
-}
-
-.home-container {
+  padding: 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
 }
 
-/* Navbar */
-.navbar {
+/* === Navigation Bar === */
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #e2e8f0; /* Lighter navbar */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
-  color: #3b82f6;
+  color: white;
 }
 
-.nav-links {
+nav ul {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 20px;
 }
 
-.nav-links li a {
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
   text-decoration: none;
-  color: #1e293b;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  color: white;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
 }
 
-.nav-links li a:hover {
-  color: #2563eb;
+nav ul li a:hover {
+  color: #a0c4ff; /* Light accent */
 }
 
-/* Hero Section */
+.signup-btn {
+  background: linear-gradient(145deg, #00c6ff, #0072ff); /* Neon Blue Gradient */
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+  background: #0077b6;
+}
+
+/* === Hero Section === */
 .hero {
+  display: grid;
+  place-items: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #2980b9, #6dd5fa); /* Aqua Gradient */
   text-align: center;
-  padding: 4rem 2rem;
-  background-color: #f8fafc; /* Light gray-blue background */
-  border-bottom: 1px solid #e2e8f0;
+  border-radius: 10px;
+  margin: 20px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: #2563eb;
-  margin-bottom: 1rem;
+  font-size: 42px;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  color: #475569;
-  max-width: 700px;
-  margin: 0 auto 2rem;
+  font-size: 18px;
+  max-width: 600px;
 }
 
-.cta {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  background-color: #3b82f6;
+/* === CTA Button === */
+.btn-3d {
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #00c6ff, #0072ff); /* Button Gradient */
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3),
+              -4px -4px 10px rgba(255, 255, 255, 0.2);
   color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-top: 20px;
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #2563eb;
+.btn-3d:hover {
+  transform: translateY(-3px);
 }
 
-.btn.outline {
-  background-color: transparent;
-  border: 2px solid #3b82f6;
-  color: #3b82f6;
+/* === Info Section === */
+.info-section {
+  padding: 50px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  margin: 30px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.btn.outline:hover {
-  background-color: #e2e8f0;
-  color: #1e293b;
+.info-section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* === Footer === */
+footer {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  border-radius: 10px;
+  margin: 30px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #a0c4ff;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.social-links a:hover {
+  text-decoration: underline;
 }
