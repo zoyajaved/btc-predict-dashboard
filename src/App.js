@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { auth } from "./firebase";
 import { onAuthStateChanged } from "firebase/auth";
+
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -30,19 +31,27 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/login"
-          element={user ? <Navigate to="/dashboard" /> : <Login onLogin={() => setUser(auth.currentUser)} />}
+          element={
+            user ? <Navigate to="/dashboard" /> : <Login onLogin={() => setUser(auth.currentUser)} />
+          }
         />
         <Route
           path="/register"
-          element={user ? <Navigate to="/dashboard" /> : <Register />}
+          element={
+            user ? <Navigate to="/dashboard" /> : <Register />
+          }
         />
         <Route
           path="/dashboard"
-          element={user ? <Dashboard /> : <Navigate to="/login" />}
+          element={
+            user ? <Dashboard /> : <Navigate to="/login" />
+          }
         />
         <Route
           path="/prediction"
-          element={user ? <Prediction /> : <Navigate to="/login" />}
+          element={
+            user ? <Prediction /> : <Navigate to="/login" />
+          }
         />
       </Routes>
     </Router>
