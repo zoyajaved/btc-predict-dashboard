@@ -11,7 +11,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import "./Prediction.css"; // ✅ Import the CSS
+import "./Prediction.css";
 
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
 
@@ -77,7 +77,7 @@ function Prediction() {
 
   return (
     <div className="container">
-      <h2>🔮 Crypto Prediction</h2>
+      <h2>🔮 Bitcoin Price Prediction</h2>
 
       <div className="info-boxes">
         <div className="info-box">Currency: Bitcoin</div>
@@ -98,16 +98,30 @@ function Prediction() {
 
       <button onClick={handlePredict}>Predict</button>
 
-      {prediction.min && (
-        <Line
-          data={chartData}
-          options={{
-            responsive: true,
-            plugins: {
-              legend: { position: "bottom" },
-            },
-          }}
-        />
+      {prediction.min !== null && prediction.max !== null && (
+        <>
+          <div className="result-boxes">
+            <div className="result-box">
+              <strong>Predicted Min:</strong> {prediction.min.toFixed(2)}
+            </div>
+            <div className="result-box">
+              <strong>Predicted Max:</strong> {prediction.max.toFixed(2)}
+            </div>
+          </div>
+          <Line
+            data={chartData}
+            options={{
+              responsive: true,
+              plugins: {
+                legend: { position: "bottom", labels: { color: "#e2e8f0" } },
+              },
+              scales: {
+                x: { ticks: { color: "#e2e8f0" } },
+                y: { ticks: { color: "#e2e8f0" } },
+              },
+            }}
+          />
+        </>
       )}
     </div>
   );
