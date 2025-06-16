@@ -7,15 +7,23 @@ import Dashboard from "./components/Dashboard";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [isRegistering, setIsRegistering] = useState(false);
+  const [loading, setLoading] = useState(true); // ✅ loading flag
+  const [isRegistering, setIsRegistering] = useState(false); // Toggle form
 
+  // Listen for login/logout status
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setUser(user);
+      setLoading(false); // ✅ done checking auth
     });
-    return () => unsubscribe();
+    return () => unsubscribe(); // clean up
   }, []);
 
+  if (loading) {
+    return <div>Loading authentication...</div>; // ✅ waiting screen
+  }
+
+  // Not logged in: show login or register
   if (!user) {
     return (
       <div className="auth-container">
@@ -40,6 +48,7 @@ function App() {
     );
   }
 
+  // Logged in: show dashboard
   return <Dashboard />;
 }
 
