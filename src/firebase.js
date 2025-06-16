@@ -1,9 +1,10 @@
 // src/firebase.js
+
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// ✅ Firebase config
+// ✅ Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyB0wHyUYjUvHflg8Y3Dfy9ue52V3pn1VTU",
   authDomain: "crypto-prediction-d1570.firebaseapp.com",
@@ -14,10 +15,9 @@ const firebaseConfig = {
   measurementId: "G-B3H5MLHNES"
 };
 
-// ✅ Initialize Firebase once
+// ✅ Initialize Firebase App
 const app = initializeApp(firebaseConfig);
 
-// ✅ Export correctly
-const auth = getAuth(app);
-const db = getFirestore(app);
-export { auth, db };
+// ✅ Firebase Services
+export const auth = getAuth(app);
+export const db = getFirestore(app);

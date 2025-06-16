@@ -1,0 +1,52 @@
+/* src/styles/Home.css */
+.home-container {
+  padding: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f9ff;
+  min-height: 100vh;
+  color: #1c1c1c;
+}
+
+.home-header h1 {
+  font-size: 2.5rem;
+  color: #005e99;
+  margin-bottom: 10px;
+}
+
+.home-header p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.home-nav {
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nav-btn {
+  background-color: #0073e6;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #005bb5;
+}
+
+.home-about h2 {
+  font-size: 1.8rem;
+  color: #005e99;
+  margin-bottom: 15px;
+}
+
+.home-about p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #444;
+}
