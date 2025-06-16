@@ -1,11 +1,13 @@
+/* AuthForm.css - Stylish dark-themed login/register form */
+
 .auth-container {
-  background-color: #121212;
-  color: #e2e8f0;
-  padding: 2rem;
+  background: #1f2937; /* Dark slate background */
+  color: #e5e7eb; /* Light text */
   max-width: 400px;
-  margin: 4rem auto;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 191, 166, 0.3);
+  margin: 60px auto;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(0, 191, 166, 0.3);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -13,29 +15,38 @@
 
 .auth-container h2 {
   text-align: center;
+  font-size: 1.8rem;
   color: #00bfa6;
+  margin-bottom: 1rem;
 }
 
 .auth-container input {
-  padding: 0.8rem;
-  border: 1px solid #2a2a2a;
-  border-radius: 8px;
-  background-color: #1e1e1e;
-  color: #fff;
+  padding: 0.75rem;
+  border: 1px solid #374151;
+  border-radius: 0.5rem;
+  background: #111827;
+  color: #e5e7eb;
   font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.auth-container input:focus {
+  border-color: #00bfa6;
 }
 
 .auth-container button {
-  padding: 0.9rem;
-  border: none;
-  border-radius: 8px;
-  background-color: #00bfa6;
+  background: #00bfa6;
   color: #fff;
+  border: none;
+  padding: 0.75rem;
+  font-size: 1rem;
   font-weight: bold;
+  border-radius: 0.5rem;
   cursor: pointer;
   transition: background 0.3s;
 }
 
 .auth-container button:hover {
-  background-color: #00a88f;
+  background: #019e8f;
 }
