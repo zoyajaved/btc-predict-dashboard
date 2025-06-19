@@ -66,8 +66,8 @@ function Dashboard() {
       </div>
 
       <button
-        onClick={() => navigate("/prediction")}
-        className="predict-btn"
+         onClick={() => navigate("/prediction", { state: { currentPrice: price } })}
+         className="predict-btn"
       >
         🔮 Generate Prediction
       </button>
