@@ -17,7 +17,7 @@ import "./Prediction.css";
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Title, Tooltip, Legend);
 
 const API_URL = "https://zoyajaved-bitcoin-lstm-app.hf.space/predict";
-const COINGECKO_API = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1&interval=minute";
+const COINGECKO_API = "https://api.coingecko.com/api/v3/coins/bitcoin/ohlc?vs_currency=usd&days=1";
 
 function Prediction() {
   const location = useLocation();
@@ -31,12 +31,15 @@ function Prediction() {
     try {
       const response = await fetch(COINGECKO_API);
       const data = await response.json();
-      const allPrices = data.prices.map((p) => p[1]);
-      const last16 = allPrices.slice(-16);
-      setPrices(last16.map((p) => p.toFixed(2))); // Fill readonly input fields
+
+      // Each entry: [timestamp, open, high, low, close]
+      const closePrices = data.map((entry) => entry[4]);
+      const last16 = closePrices.slice(-16);
+
+      setPrices(last16.map((p) => p.toFixed(2)));
       return last16;
     } catch (error) {
-      console.error("Error fetching prices from CoinGecko:", error);
+      console.error("Error fetching from CoinGecko:", error);
       alert("Failed to fetch data from CoinGecko.");
       return [];
     }
