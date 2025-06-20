@@ -1,10 +1,9 @@
 // src/firebase.js
-
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, setPersistence, browserSessionPersistence } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// ✅ Firebase configuration
+// ✅ Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyB0wHyUYjUvHflg8Y3Dfy9ue52V3pn1VTU",
   authDomain: "crypto-prediction-d1570.firebaseapp.com",
@@ -15,9 +14,12 @@ const firebaseConfig = {
   measurementId: "G-B3H5MLHNES"
 };
 
-// ✅ Initialize Firebase App
+// ✅ Initialize app
 const app = initializeApp(firebaseConfig);
 
-// ✅ Firebase Services
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+// ✅ Auth and DB
+const auth = getAuth(app);
+setPersistence(auth, browserSessionPersistence); // 🔒 Session-only login
+const db = getFirestore(app);
+
+export { auth, db };
